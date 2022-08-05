@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./lib.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>library</h1>
+        <button class="login-btn">Log in</button>
+    </header>
+    <main>
+        <button class="form-btn"> + Add Book</button>
+        <div class="books-grid"></div>
+    </main>
+    <footer>
+        copyright &copy; 2022 NimiDev <img src="./github.png" alt="">
+    </footer>
+    <div class="form-container">
+        <button class="remove"><img src="./close-circle-outline.png" alt=""></button>
+        <form>
+            <h2>Add new book</h2>
+            <input type="text" placeholder="Title" id="title">
+            <input type="text" placeholder="Author" id="author">
+            <input type=" number"  placeholder="Pages" id="pages">
+            <div class="checkbox">
+                <label for="checkread">Have you read it?</label>
+                <input type="checkbox" id="checkread">
+            </div>
+            <button type="button" class="submit-btn" id="form-submitbtn">submit</button>
+        </form>
+    </div>
+</body>
+</html>
