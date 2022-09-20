@@ -26,9 +26,38 @@ const bookPages = document.querySelector('#pages')
 const isRead = document.querySelector('#checkread')
 const formSubmitbtn = document.querySelector('#form-submitbtn')
 const bookGrid = document.querySelector('.books-grid')
- 
+function submiBtnClick(){
+    var formValid = document.querySelector('#form-id').reportValidity();
+    return formValid;
+}
 
 formSubmitbtn.addEventListener('click', function(event){
+    if(submiBtnClick() === true){
+        createCard()
+    }
+})
+
+document.addEventListener( "click", someListener );
+
+function someListener(event){
+    let element = event.target;
+    if(element.tagName == 'BUTTON' && element.classList.contains("removebtn")){
+        event.target.parentNode.remove();
+    }
+}
+
+document.addEventListener( "click", function(event){
+    let element = event.target;
+    if(element.tagName == 'BUTTON' && element.classList.contains("unreadbtn")){
+        event.target.classList.remove('unreadbtn');
+        event.target.classList.add('readbtn')
+    }else if(element.tagName == 'BUTTON' && element.classList.contains("readbtn")){
+        event.target.classList.remove('readbtn');
+        event.target.classList.add('unreadbtn')
+    }
+});
+
+function createCard(){
     const newBook = new book(bookTitle.value, bookAuthor.value, bookPages.value, isRead.checked)
     myLibrary.push(newBook)
     formContainer.classList.remove('active');
@@ -63,27 +92,6 @@ formSubmitbtn.addEventListener('click', function(event){
     bookTitle.value = ''
     bookAuthor.value = ''
     bookPages.value = ''
-})
-
-document.addEventListener( "click", someListener );
-
-function someListener(event){
-    let element = event.target;
-    if(element.tagName == 'BUTTON' && element.classList.contains("removebtn")){
-        event.target.parentNode.remove();
-    }
 }
-
-document.addEventListener( "click", function(event){
-    let element = event.target;
-    if(element.tagName == 'BUTTON' && element.classList.contains("unreadbtn")){
-        event.target.classList.remove('unreadbtn');
-        event.target.classList.add('readbtn')
-    }else if(element.tagName == 'BUTTON' && element.classList.contains("readbtn")){
-        event.target.classList.remove('readbtn');
-        event.target.classList.add('unreadbtn')
-    }
-});
-
 
 

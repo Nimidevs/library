@@ -22,16 +22,16 @@
     </footer>
     <div class="form-container">
         <button class="remove"><img src="./images/close-circle-outline.png" alt=""></button>
-        <form>
+        <form id="form-id" action="">
             <h2>Add new book</h2>
-            <input type="text" placeholder="Title" id="title">
-            <input type="text" placeholder="Author" id="author">
-            <input type=" number"  placeholder="Pages" id="pages">
+            <input type="text" placeholder="Title" id="title" required>
+            <input type="text" placeholder="Author" id="author" required>
+            <input type="number"  placeholder="Pages" id="pages" required>
             <div class="checkbox">
                 <label for="checkread">Have you read it?</label>
                 <input type="checkbox" id="checkread">
             </div>
-            <button type="button" class="submit-btn" id="form-submitbtn">submit</button>
+            <button class="submit-btn" id="form-submitbtn" type="button">submit</button>
         </form>
     </div>
 </body>
